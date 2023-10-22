@@ -1,10 +1,16 @@
 ﻿namespace Delegates
 {
-	internal class Program
+	public delegate void HelloDelegate(string message);
+	public class Program
 	{
 		static void Main(string[] args)
 		{
-			Console.WriteLine("Hello, World!");
+			HelloDelegate del = new HelloDelegate(Hello);
+			del("Hello, World");
+		}
+		public static void Hello(string message)
+		{
+			Console.WriteLine(message);
 		}
 	}
 }
