@@ -18,6 +18,15 @@ namespace Delegates
 			Employees.Add(new Employee { ID=4,Experience=6,Salary=10000,Name="Rishu"});
 			PromoteDelegate pd = new PromoteDelegate(Employee.PromoteEmployee);
 			pd(Employees);
+
+
+			PromotioCriteria pc = new PromotioCriteria(PromoteInSix);
+			BetterExample.BetterPromotion(Employees,pc);
+		}
+		public static bool PromoteInSix(Employee emp)
+		{
+			if (emp.Experience >= 6) return true;
+			return false;
 		}
 		public static void Hello(string message)
 		{
